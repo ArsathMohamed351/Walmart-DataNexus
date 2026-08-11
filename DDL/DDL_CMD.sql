@@ -38,12 +38,12 @@ CREATE TABLE IF NOT EXISTS products (
     subcategory VARCHAR(100),
     brand VARCHAR(100),
     sku VARCHAR(100) UNIQUE,
-    price NUMERIC(10,2),
-    cost_price NUMERIC(10,2),
+    price NUMERIC(10, 2),
+    cost_price NUMERIC(10, 2),
     supplier_name VARCHAR(255),
     stock_quantity INT,
     reorder_level INT,
-    weight_kg NUMERIC(10,2),
+    weight_kg NUMERIC(10, 2),
     created_timestamp TIMESTAMP,
     updated_timestamp TIMESTAMP,
     is_active CHAR(1)
@@ -57,14 +57,16 @@ CREATE TABLE IF NOT EXISTS employees (
     email VARCHAR(255),
     job_title VARCHAR(100),
     department VARCHAR(100),
-    salary NUMERIC(10,2),
+    salary NUMERIC(10, 2),
     hire_date DATE,
     employment_type VARCHAR(50),
     created_timestamp TIMESTAMP,
     updated_timestamp TIMESTAMP,
     is_active CHAR(1),
 
-    FOREIGN KEY (store_id) REFERENCES stores(store_id)
+    CONSTRAINT fk_employees_store
+        FOREIGN KEY (store_id)
+        REFERENCES stores(store_id)
 );
 
 CREATE TABLE IF NOT EXISTS orders (
@@ -77,16 +79,21 @@ CREATE TABLE IF NOT EXISTS orders (
     sales_channel VARCHAR(50),
     shipping_method VARCHAR(100),
     shipping_address VARCHAR(500),
-    discount_amount NUMERIC(12,2),
-    tax_amount NUMERIC(12,2),
-    shipping_cost NUMERIC(12,2),
-    total_amount NUMERIC(12,2),
+    discount_amount NUMERIC(12, 2),
+    tax_amount NUMERIC(12, 2),
+    shipping_cost NUMERIC(12, 2),
+    total_amount NUMERIC(12, 2),
     created_timestamp TIMESTAMP,
     updated_timestamp TIMESTAMP,
     is_active CHAR(1),
 
-    FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
-    FOREIGN KEY (store_id) REFERENCES stores(store_id)
+    CONSTRAINT fk_orders_customer
+        FOREIGN KEY (customer_id)
+        REFERENCES customers(customer_id),
+
+    CONSTRAINT fk_orders_store
+        FOREIGN KEY (store_id)
+        REFERENCES stores(store_id)
 );
 
 CREATE TABLE IF NOT EXISTS order_items (
@@ -94,14 +101,19 @@ CREATE TABLE IF NOT EXISTS order_items (
     order_id BIGINT,
     product_id BIGINT,
     quantity INT,
-    unit_price NUMERIC(10,2),
-    discount_amount NUMERIC(12,2),
-    tax_amount NUMERIC(12,2),
-    line_amount NUMERIC(12,2),
+    unit_price NUMERIC(10, 2),
+    discount_amount NUMERIC(12, 2),
+    tax_amount NUMERIC(12, 2),
+    line_amount NUMERIC(12, 2),
     created_timestamp TIMESTAMP,
     updated_timestamp TIMESTAMP,
     is_active CHAR(1),
 
-    FOREIGN KEY (order_id) REFERENCES orders(order_id),
-    FOREIGN KEY (product_id) REFERENCES products(product_id)
+    CONSTRAINT fk_order_items_order
+        FOREIGN KEY (order_id)
+        REFERENCES orders(order_id),
+
+    CONSTRAINT fk_order_items_product
+        FOREIGN KEY (product_id)
+        REFERENCES products(product_id)
 );
