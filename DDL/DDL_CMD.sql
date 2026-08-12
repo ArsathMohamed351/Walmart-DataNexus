@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS customers (
+CREATE TABLE IF NOT EXISTS staging.customers (
     customer_id BIGINT PRIMARY KEY,
     first_name VARCHAR(100),
     last_name VARCHAR(100),
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS customers (
     is_active CHAR(1)
 );
 
-CREATE TABLE IF NOT EXISTS stores (
+CREATE TABLE IF NOT EXISTS staging.stores (
     store_id BIGINT PRIMARY KEY,
     store_name VARCHAR(255),
     city VARCHAR(100),
@@ -31,25 +31,25 @@ CREATE TABLE IF NOT EXISTS stores (
     is_active CHAR(1)
 );
 
-CREATE TABLE IF NOT EXISTS products (
-    product_id BIGINT PRIMARY KEY,
-    product_name VARCHAR(255),
-    category VARCHAR(100),
-    subcategory VARCHAR(100),
-    brand VARCHAR(100),
-    sku VARCHAR(100) UNIQUE,
-    price NUMERIC(10, 2),
-    cost_price NUMERIC(10, 2),
-    supplier_name VARCHAR(255),
-    stock_quantity INT,
-    reorder_level INT,
-    weight_kg NUMERIC(10, 2),
-    created_timestamp TIMESTAMP,
-    updated_timestamp TIMESTAMP,
-    is_active CHAR(1)
-);
+    CREATE TABLE IF NOT EXISTS staging.products (
+        product_id BIGINT PRIMARY KEY,
+        product_name VARCHAR(255),
+        category VARCHAR(100),
+        subcategory VARCHAR(100),
+        brand VARCHAR(100),
+        sku VARCHAR(100) UNIQUE,
+        price NUMERIC(10, 2),
+        cost_price NUMERIC(10, 2),
+        supplier_name VARCHAR(255),
+        stock_quantity INT,
+        reorder_level INT,
+        weight_kg NUMERIC(10, 2),
+        created_timestamp TIMESTAMP,
+        updated_timestamp TIMESTAMP,
+        is_active CHAR(1)
+    );
 
-CREATE TABLE IF NOT EXISTS employees (
+CREATE TABLE IF NOT EXISTS staging.employees (
     employee_id BIGINT PRIMARY KEY,
     store_id BIGINT,
     first_name VARCHAR(100),
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS employees (
         REFERENCES stores(store_id)
 );
 
-CREATE TABLE IF NOT EXISTS orders (
+CREATE TABLE IF NOT EXISTS staging.orders (
     order_id BIGINT PRIMARY KEY,
     customer_id BIGINT,
     store_id BIGINT,
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS orders (
         REFERENCES stores(store_id)
 );
 
-CREATE TABLE IF NOT EXISTS order_items (
+CREATE TABLE IF NOT EXISTS staging.order_items (
     order_item_id BIGINT PRIMARY KEY,
     order_id BIGINT,
     product_id BIGINT,

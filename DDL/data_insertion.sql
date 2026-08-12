@@ -1,7 +1,6 @@
-{# DATA INSERTION IN CUSTOMERS TABLE #}
+{# insert data into Customers table #}
 
-
-INSERT INTO customers (customer_id, first_name, last_name, email, phone, city, province, country, postal_code, customer_segment, loyalty_tier, created_timestamp, updated_timestamp, is_active) VALUES
+INSERT INTO staging.customers (customer_id, first_name, last_name, email, phone, city, province, country, postal_code, customer_segment, loyalty_tier, created_timestamp, updated_timestamp, is_active) VALUES
     (1, 'Liam', 'Wilson', 'liam.wilson1@example.com', '+1-416-555-1001', 'Toronto', 'Ontario', 'Canada', '10001', 'Regular', 'Bronze', '2025-01-02 09:00:00', '2025-01-22 09:00:00', 'Y'),
     (2, 'Noah', 'Thomas', 'noah.thomas2@example.com', '+1-416-555-1002', 'Vancouver', 'British Columbia', 'Canada', '10002', 'Premium', 'Silver', '2025-01-03 09:00:00', '2025-01-06 09:00:00', 'Y'),
     (3, 'Oliver', 'Harris', 'oliver.harris3@example.com', '+1-416-555-1003', 'Montreal', 'Quebec', 'Canada', '10003', 'Business', 'Gold', '2025-01-04 09:00:00', '2025-01-04 09:00:00', 'Y'),
@@ -53,9 +52,9 @@ INSERT INTO customers (customer_id, first_name, last_name, email, phone, city, p
     (49, 'Henry', 'Jackson', 'henry.jackson49@example.com', '+1-416-555-1049', 'Toronto', 'Ontario', 'Canada', '10049', 'Regular', 'Bronze', '2025-02-19 09:00:00', '2025-03-21 09:00:00', 'Y'),
     (50, 'Alexander', 'Martin', 'alexander.martin50@example.com', '+1-416-555-1050', 'Vancouver', 'British Columbia', 'Canada', '10050', 'Premium', 'Silver', '2025-02-20 09:00:00', '2025-03-16 09:00:00', 'Y');
 
-{# DATA INSERTION IN STORES TABLE #}
+{# Insert data into Stores table #}
 
-INSERT INTO stores (store_id, store_name, city, province, country, postal_code, store_type, store_size_sqft, opening_date, manager_name, created_timestamp, updated_timestamp, is_active) VALUES
+INSERT INTO staging.stores (store_id, store_name, city, province, country, postal_code, store_type, store_size_sqft, opening_date, manager_name, created_timestamp, updated_timestamp, is_active) VALUES
     (1, 'Walmart Store 001', 'Toronto', 'Ontario', 'Canada', '20001', 'Supercenter', 45750, '2019-02-02', 'Manager 001', '2024-01-02 00:00:00', '2024-02-19 00:00:00', 'Y'),
     (2, 'Walmart Store 002', 'Vancouver', 'British Columbia', 'Canada', '20002', 'Neighborhood', 46500, '2020-03-03', 'Manager 002', '2024-01-03 00:00:00', '2024-01-21 00:00:00', 'Y'),
     (3, 'Walmart Store 003', 'Montreal', 'Quebec', 'Canada', '20003', 'Hypermarket', 47250, '2021-04-04', 'Manager 003', '2024-01-04 00:00:00', '2024-01-20 00:00:00', 'Y'),
@@ -107,14 +106,14 @@ INSERT INTO stores (store_id, store_name, city, province, country, postal_code, 
     (49, 'Walmart Store 049', 'Toronto', 'Ontario', 'Canada', '20049', 'Supercenter', 81750, '2018-02-23', 'Manager 049', '2024-02-19 00:00:00', '2024-03-15 00:00:00', 'Y'),
     (50, 'Walmart Store 050', 'Vancouver', 'British Columbia', 'Canada', '20050', 'Neighborhood', 82500, '2019-03-24', 'Manager 050', '2024-02-20 00:00:00', '2024-04-24 00:00:00', 'Y');
 
-{# DATA INSERTION IN PRODUCTS TABLE #}
+{# insert data into Products table #}
 
-INSERT INTO products (product_id, product_name, category, subcategory, brand, sku, price, cost_price, supplier_name, stock_quantity, reorder_level, weight_kg, created_timestamp, updated_timestamp, is_active) VALUES
+INSERT INTO staging.products (product_id, product_name, category, subcategory, brand, sku, price, cost_price, supplier_name, stock_quantity, reorder_level, weight_kg, created_timestamp, updated_timestamp, is_active) VALUES
     (1, 'Walmart Televisions Product 001', 'Electronics', 'Televisions', 'Walmart', 'SKU-000001', 16.34, 10.66, 'Supplier 01', 347, 45, 5.57, '2024-01-03 00:00:00', '2024-05-01 00:00:00', 'Y'),
     (2, 'Great Value Snacks Product 002', 'Grocery', 'Snacks', 'Great Value', 'SKU-000002', 23.69, 15.1, 'Supplier 02', 417, 13, 5.8, '2024-01-05 00:00:00', '2024-04-13 00:00:00', 'Y'),
-    (3, 'Samsung Furniture Product 003', 'Home', 'Furniture', 'Samsung', 'SKU-000003', 31.04, 17.34, 'Supplier 03', 225, 27, 1.75, '2024-01-07 00:00:00', '2024-02-17 00:00:00', 'Y'),
-    (4, 'Apple Men Product 004', 'Clothing', 'Men', 'Apple', 'SKU-000004', 38.39, 30.58, 'Supplier 04', 468, 30, 5.39, '2024-01-09 00:00:00', '2024-03-22 00:00:00', 'Y'),
-    (5, 'Nike Women Product 005', 'Clothing', 'Women', 'Nike', 'SKU-000005', 45.74, 31.32, 'Supplier 05', 488, 39, 3.66, '2024-01-11 00:00:00', '2024-05-04 00:00:00', 'Y'),
+    (3, 'Samsung Furniture Product OXO3', 'Home', 'Furniture', 'Samsung', 'SKU-OXO3', 31.OX4, 17.34, 'Supplier OX3', 225, 27, 1.75, '2OX4-OX1-OX7 OXO:OXO:OXO', '2OX4-OX2-OX7 OXO:OXO:OXO', 'Y'),
+    (4, 'Apple Men Product OXO4', 'Clothing', 'Men', 'Apple', 'SKU-OXO4', 38.39, 3OX.58, 'Supplier OX4', 468, 3OX, 5.39, '2OX4-OX1-OX9 OXO:OXO:OXO', '2OX4-OX3-OX2 OXO:OXO:OXO', 'Y'),
+    (5, 'Nike Women Product OXO5', 'Clothing', 'Women', 'Nike', 'SKU-OXO5', 45.74, 31.32, 'Supplier OX5', 488, 39, 3.66, '2OX4-OX1-XX1 OXO:OXO:OXO', '2OX4-OX5-XX4 OXO:OXO:OXO', 'Y'),
     (6, 'Adidas Personal Care Product 006', 'Health', 'Personal Care', 'Adidas', 'SKU-000006', 53.09, 31.2, 'Supplier 06', 307, 44, 6.64, '2024-01-13 00:00:00', '2024-04-18 00:00:00', 'Y'),
     (7, 'Sony Games Product 007', 'Toys', 'Games', 'Sony', 'SKU-000007', 60.44, 42.78, 'Supplier 07', 318, 35, 9.11, '2024-01-15 00:00:00', '2024-05-09 00:00:00', 'Y'),
     (8, 'Dell Fitness Product 008', 'Sports', 'Fitness', 'Dell', 'SKU-000008', 67.79, 55.54, 'Supplier 08', 280, 41, 2.36, '2024-01-17 00:00:00', '2024-02-04 00:00:00', 'Y'),
@@ -161,9 +160,9 @@ INSERT INTO products (product_id, product_name, category, subcategory, brand, sk
     (49, 'HP Accessories Product 049', 'Automotive', 'Accessories', 'HP', 'SKU-000049', 369.14, 296.19, 'Supplier 09', 362, 30, 6.04, '2024-04-08 00:00:00', '2024-05-05 00:00:00', 'Y'),
     (50, 'P&G Stationery Product 050', 'Office', 'Stationery', 'P&G', 'SKU-000050', 376.49, 247.3, 'Supplier 10', 350, 29, 11.48, '2024-04-10 00:00:00', '2024-07-05 00:00:00', 'Y');
 
-{# DATA INSERTION IN EMPLOYEES TABLE #}
+{# Insert data into Employees table #}
 
-INSERT INTO employees (employee_id, store_id, first_name, last_name, email, job_title, department, salary, hire_date, employment_type, created_timestamp, updated_timestamp, is_active) VALUES
+INSERT INTO staging.employees (employee_id, store_id, first_name, last_name, email, job_title, department, salary, hire_date, employment_type, created_timestamp, updated_timestamp, is_active) VALUES
     (1, 1, 'Noah', 'Anderson', 'employee1@walmart.example', 'Cashier', 'Grocery', 32434.8, '2021-02-02', 'Full-Time', '2024-02-02 00:00:00', '2024-03-26 00:00:00', 'Y'),
     (2, 2, 'Elijah', 'Martin', 'employee2@walmart.example', 'Store Associate', 'Electronics', 35457.83, '2022-03-03', 'Part-Time', '2024-02-03 00:00:00', '2024-02-08 00:00:00', 'Y'),
     (3, 3, 'William', 'Walker', 'employee3@walmart.example', 'Sales Associate', 'Clothing', 39495.1, '2023-04-04', 'Contract', '2024-02-04 00:00:00', '2024-03-16 00:00:00', 'Y'),
@@ -215,9 +214,9 @@ INSERT INTO employees (employee_id, store_id, first_name, last_name, email, job_
     (49, 49, 'Amelia', 'Anderson', 'employee49@walmart.example', 'Department Manager', 'Home', 60309.94, '2024-02-23', 'Full-Time', '2024-03-21 00:00:00', '2024-05-12 00:00:00', 'Y'),
     (50, 50, 'Evelyn', 'Martin', 'employee50@walmart.example', 'Supervisor', 'Customer Service', 28159.04, '2020-03-24', 'Part-Time', '2024-03-22 00:00:00', '2024-04-13 00:00:00', 'Y');
 
-{# DATA INSERTION IN ORDERS TABLE #}
+{# insert data into Orders table #}
 
-INSERT INTO orders (order_id, customer_id, store_id, order_timestamp, payment_method, order_status, sales_channel, shipping_method, shipping_address, discount_amount, tax_amount, shipping_cost, total_amount, created_timestamp, updated_timestamp, is_active) VALUES
+INSERT INTO staging.orders (order_id, customer_id, store_id, order_timestamp, payment_method, order_status, sales_channel, shipping_method, shipping_address, discount_amount, tax_amount, shipping_cost, total_amount, created_timestamp, updated_timestamp, is_active) VALUES
     (1, 7, 3, '2025-04-01 19:00:00', 'Credit Card', 'Completed', 'Store', 'Standard', '101 Main Street, Montreal', 3.75, 13.59, 0, 189.52, '2025-04-01 19:02:00', '2025-04-03 16:02:00', 'Y'),
     (2, 14, 6, '2025-04-02 04:00:00', 'Debit Card', 'Completed', 'Online', 'Express', '102 Main Street, Ottawa', 7.5, 14.17, 9.99, 528.73, '2025-04-02 04:02:00', '2025-04-02 11:02:00', 'Y'),
     (3, 21, 9, '2025-04-02 13:00:00', 'Cash', 'Completed', 'Mobile App', 'Same Day', '103 Main Street, Toronto', 11.25, 14.76, 4.99, 1014.66, '2025-04-02 13:02:00', '2025-04-03 14:02:00', 'Y'),
@@ -269,9 +268,9 @@ INSERT INTO orders (order_id, customer_id, store_id, order_timestamp, payment_me
     (49, 43, 47, '2025-04-19 19:00:00', 'UPI', 'Completed', 'Store', 'Standard', '149 Main Street, Winnipeg', 3.75, 41.66, 0, 1516.11, '2025-04-19 19:02:00', '2025-04-19 22:02:00', 'Y'),
     (50, 50, 50, '2025-04-20 04:00:00', 'Gift Card', 'Completed', 'Online', 'Express', '150 Main Street, Vancouver', 7.5, 42.25, 9.99, 421.23, '2025-04-20 04:02:00', '2025-04-22 02:02:00', 'Y');
 
-{# DATA INSERTION IN ORDER_ITEMS TABLE #}
+{# insert data into Order_Items table #}
 
-INSERT INTO order_items (order_item_id, order_id, product_id, quantity, unit_price, discount_amount, tax_amount, line_amount, created_timestamp, updated_timestamp, is_active) VALUES
+INSERT INTO staging.order_items (order_item_id, order_id, product_id, quantity, unit_price, discount_amount, tax_amount, line_amount, created_timestamp, updated_timestamp, is_active) VALUES
     (1, 1, 11, 2, 89.84, 2.25, 23.07, 200.5, '2025-04-01 19:03:00', '2025-04-02 09:03:00', 'Y'),
     (2, 2, 22, 3, 170.69, 4.5, 65.98, 573.55, '2025-04-02 04:03:00', '2025-04-02 05:03:00', 'Y'),
     (3, 3, 33, 4, 251.54, 6.75, 129.92, 1129.33, '2025-04-02 13:03:00', '2025-04-03 06:03:00', 'Y'),
