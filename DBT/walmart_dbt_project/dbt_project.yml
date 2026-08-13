@@ -28,6 +28,5 @@ models:
     curated:
       +materialized: table
       +schema: curated
-      
       ephemeral:
         +materialized: ephemeral
