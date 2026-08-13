@@ -1,0 +1,1 @@
+SELECT * FROM {{ ref('stores_raw') }}
