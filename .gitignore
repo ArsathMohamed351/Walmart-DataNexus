@@ -5,10 +5,12 @@ build/
 dist/
 wheels/
 *.egg-info
+logs/
 
 # Virtual environments
 .venv
 Walmart-DataNexus
+
 .git
 Photo
 .vscode
