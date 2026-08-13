@@ -1,3 +1,5 @@
+{{ config( materialized='ephemeral') }}
+
 SELECT 
     DISTINCT
     employee_id,
