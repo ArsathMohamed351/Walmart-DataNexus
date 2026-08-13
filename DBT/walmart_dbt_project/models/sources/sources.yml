@@ -1,0 +1,28 @@
+sources:
+  - name: walmart_dbt_project
+    database: walmart
+    schema: bronze
+    tables:
+      - name: orders
+      - name: customers
+      - name : employees
+      - name : products
+      - name : stores
+      - name : order_items
+
+
+# Json Format For Above YAML Code 
+
+# sources : [{
+#            "name ": "walmart_dbt_project",
+#            "database": "walmart",
+#            "schema": "bronze",
+#            "tables": [
+#                {"name": "orders"},
+#                {"name": "customers"},
+#                {"name": "employees"},
+#                {"name": "products"},
+#                {"name": "stores"},
+#                {"name": "order_items"}
+#            ]
+#}]
