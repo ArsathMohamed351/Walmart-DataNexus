@@ -10,3 +10,5 @@ wheels/
 .venv
 Walmart-DataNexus
 .git
+Photo
+.vscode
