@@ -1,3 +1,5 @@
+{{ config( materialized='ephemeral') }}
+
 SELECT
     DISTINCT
     order_id,
