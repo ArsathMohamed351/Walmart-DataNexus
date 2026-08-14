@@ -9,6 +9,7 @@ test-paths: ["tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
+require-dbt-version: [">=1.0.0"]
 
 clean-targets:
   - "target"
@@ -28,5 +29,5 @@ models:
     curated:
       +materialized: table
       +schema: curated
-      ephemeral:
-        +materialized: ephemeral
+    ephemeral:
+      +materialized: ephemeral
