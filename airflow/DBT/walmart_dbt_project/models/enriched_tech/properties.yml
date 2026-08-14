@@ -1,0 +1,76 @@
+version: 2
+
+models:
+
+  - name: enriched_products
+    description: "This model contains enriched data for Walmart's products."
+    columns:
+      - name: product_id
+        data_tests:
+          - not_null
+          - unique:
+              config:
+                where: "price > 0"
+
+
+  - name: enriched_orders
+    description: "This model contains enriched data for Walmart's orders."
+    columns:
+      - name: order_id
+        data_tests:
+          - not_null
+          - unique
+
+
+  - name: enriched_order_items
+    description: "This model contains enriched data for Walmart's order items."
+    columns:
+      - name: order_item_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: quantity
+        data_tests:
+          - not_null
+
+      - name: unit_price
+        data_tests:
+          - not_null
+
+
+  - name: enriched_employees
+    description: "This model contains enriched data for Walmart's employees."
+    columns:
+      - name: employee_id
+        data_tests:
+          - not_null
+          - unique
+          
+      - name: job_title
+        data_tests:
+          - not_null:
+              config:
+                where: "salary > 0"
+
+
+  - name: enriched_stores
+    description: "This model contains enriched data for Walmart's stores."
+    columns:
+      - name: store_id
+        data_tests:
+          - not_null
+          - unique:
+              config:
+                where: "store_size_sqft > 0"
+
+
+  - name: enriched_customers
+    description: "This model contains enriched data for Walmart's customers."
+    columns:
+      - name: customer_id
+        data_tests:
+          - not_null
+          - unique:
+              config:
+                where: "postal_code IS NOT NULL AND email IS NOT NULL"
