@@ -1,0 +1,32 @@
+name: 'walmart_dbt_project'
+version: '1.0.0'
+
+profile: 'walmart_dbt_project'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  walmart_dbt_project:
+    raw:
+      +materialized: table
+      +schema: raw
+    enriched_tech:
+      +materialized: incremental
+      +schema: enriched_tech
+    enriched_b:
+      +materialized: table
+      +schema: enriched_business
+    curated:
+      +materialized: table
+      +schema: curated
+      ephemeral:
+        +materialized: ephemeral

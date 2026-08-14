@@ -1,0 +1,1 @@
+SELECT * FROM {{ ref('orders_items_raw') }}

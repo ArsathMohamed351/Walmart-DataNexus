@@ -14,3 +14,4 @@ Walmart-DataNexus
 .git
 Photo
 .vscode
+airflow/.env
