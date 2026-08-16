@@ -1,20 +1,21 @@
-# Python-generated files
+# Python
+.venv/
 __pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
-logs/
+*.pyc
 
-# Virtual environments
-.venv
-Walmart-DataNexus
+# Environment / secrets
+.env
+**/.env
 
-.git
-Photo
-.vscode
-airflow/.env
-airflow/config/airflow.cfg
-airflow/logs
-airflow/plugins
+# Airflow
+airflow/config/
+airflow/logs/
+
+# dbt
+**/target/
+**/dbt_packages/
+**/logs/
+**/profiles.yml
+
+# Airflow config
+**/airflow.cfg

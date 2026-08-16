@@ -1,7 +1,21 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
 
-target/
-dbt_packages/
-logs/
+# Environment / secrets
 .env
-profiles.yml
-.user.yml
+**/.env
+
+# Airflow
+airflow/config/
+airflow/logs/
+
+# dbt
+**/target/
+**/dbt_packages/
+**/logs/
+**/profiles.yml
+
+# Airflow config
+**/airflow.cfg
