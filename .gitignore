@@ -15,3 +15,6 @@ Walmart-DataNexus
 Photo
 .vscode
 airflow/.env
+airflow/configs
+airflow/logs
+airflow/plugins
