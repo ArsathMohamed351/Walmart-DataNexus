@@ -14,3 +14,9 @@ Walmart-DataNexus
 .git
 Photo
 .vscode
+airflow/.env
+airflow/config/airflow.cfg
+airflow/logs
+airflow/plugins
+airflow/DBT/walmart_dbt_project/profiles.yml
+airflow/config/airflow.cfg
